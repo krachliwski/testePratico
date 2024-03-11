@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Agenda de Contatos</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Agenda de Contatos</h2>
+        <div class="containerContato">
+            <input type="text" id="pesquisar" placeholder="Pesquisar contatos..." style="margin-bottom: 10px;">
+
+            <button onclick="mostrarForm()">Cadastrar Contato</button>
+
+            <div class="contatos" id="contatos">
+                <!-- Lista de contatos será inserida aqui -->
+            </div>
+        </div>
+
+        <div id="contatosForm" style="display: none; margin-top: 20px;">
+            <h2>Cadastrar Contato</h2>
+            <form id="form" onsubmit="return salvar()">
+                <input type="hidden" id="id"/>
+                <input type="text" id="nome" placeholder="Nome" required><br>
+                <input type="tel" placeholder="(99) 99999-9999" id="fone" maxlength="15" onkeyup="mascaraFone(event)"><br>
+                <input type="email" id="email" placeholder="Email"><br>
+                <textarea id="obs" placeholder="Observação"></textarea><br>
+                <button type="submit">Salvar</button>
+                <button type="button" onclick="voltar()">Voltar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
